@@ -8,7 +8,7 @@ app.get('/users', (req, res)=>{
     return res.json(users);
 });
 
-//[ERROR]::id가 숫자가 아니면
+//[GET]::해당 id 값 return
 app.get('/users/:id',(req, res)=>{
     const id = parseInt(req.params.id, 10);
     if(!id){
@@ -21,7 +21,21 @@ app.get('/users/:id',(req, res)=>{
     return res.json(user);
 });
 
-//[ERROR]::없는 id이면
+//[DEL]::해당 id 값 delete
+app.delete('/users/:id',(req, res)=>{
+    const id = parseInt(req.params.id, 10);
+    if(!id){
+        return res.status(400).json({error:'Incorrect id'});
+    }
+    const userIdx = users.findIndex(user=>user.id===id);
+    if(userIdx === -1){
+        return res.status(404).json({error: 'Unknown user'});
+    }
+    users.splice(userIdx, 1);
+    res.status(204).send();
+});
+
+//[ERROR]::404 NOT FOUND
 app.get('/users/:id', (req, res)=>{
     let user = users.filter(user => user.id === id)[0];
     if(!user){
