@@ -8,7 +8,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 
 router.get('/', controller.index);
 router.get('/:id',controller.show);
-router.delete('/:id',controller.destroy);
+router.post('/:id/del',controller.destroy);
 router.post('/', controller.create);
-router.put('/:id', controller.update);
+router.post('/:id/put', controller.update);
 module.exports = router;
