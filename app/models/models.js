@@ -9,11 +9,13 @@ const sequelize = new Sequelize(
     }
 );
 
-const User = sequelize.define('user',{
-    name: Sequelize.STRING
+const Todo = sequelize.define('todos',{
+    title: Sequelize.STRING,
+    sub_title: Sequelize.STRING,
+    importance: Sequelize.INTEGER
 });
 
 module.exports = {
     sequelize: sequelize,
-    User: User
+    Todo: Todo
 }

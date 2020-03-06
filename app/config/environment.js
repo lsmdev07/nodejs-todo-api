@@ -3,7 +3,7 @@ const environment = {
         mysql: {
             username:'semi',
             password:'sml07190',
-            database:'node_api_tuto'
+            database:'todo_webapp'
         },
         sequelize: {
             force:false

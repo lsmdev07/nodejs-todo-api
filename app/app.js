@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use('/users', require('./api/users'));
+app.use('/todos', require('./api/todos'));
 
 
 module.exports = app;
