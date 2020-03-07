@@ -6,8 +6,8 @@ exports.index = (req, res) => {
         for (let i = 0; i < results.length; i++) {
             
             r += `<a href="/todos/${results[i].id}" style=" text-decoration:none;">
-            no.${i}  할 일: ${results[i].title}
-            세부 설명: ${results[i].sub_title}
+            no.${i}  할 일: ${results[i].title}/
+            세부 설명: ${results[i].sub_title}/
             중요도: ${results[i].importance}
              <br><br>`
         }
